@@ -1,0 +1,27 @@
+// Пакет, в котором находится класс
+package com.javarush.task.pro.task14.task1407;
+
+/* 
+Еда едой, а сон по расписанию
+*/
+
+// Класс, представляющий льва
+public class Lion {
+
+    // Метод, описывающий процесс поедания пищи львом
+    public void eat(Food food) {
+        try {
+            System.out.println();  // Пустая строка для разделения вывода
+            System.out.println("ищет еду");  // Лев начинает искать еду
+            System.out.println("нашел " + food.name);  // Выводим найденную еду (если food не null)
+            System.out.println("все съел");  // Лев съедает еду
+        } catch (NullPointerException e) {
+            // Если food == null, выводим сообщение, что лев ничего не нашел
+            System.out.println("ничего не нашел");
+        } finally {
+            // Этот блок выполнится в любом случае, даже если было исключение
+            // Проверяем, была ли еда (food != null), и добавляем "голодным" при ее отсутствии
+            System.out.println("лег спать" + (food == null ? " голодным" : ""));
+        }
+    }
+}
